@@ -28,7 +28,7 @@ body{
     overflow-x:hidden;
 }
 
-/* BACKGROUND ANIMATION */
+/* BACKGROUND */
 
 .background-animation{
     position:fixed;
@@ -88,6 +88,8 @@ body{
         background-position:0% 50%;
     }
 }
+
+/* MAIN */
 
 .main{
     width:100%;
@@ -330,30 +332,91 @@ body{
     gap:25px;
 }
 
+/* NEON GALLERY */
+
 .gallery-item{
+    position:relative;
     background:rgba(255,255,255,0.08);
-    border:1px solid #00eaff;
-    border-radius:15px;
+    border:2px solid #00eaff;
+    border-radius:20px;
     overflow:hidden;
     backdrop-filter:blur(10px);
-    transition:0.3s;
+    transition:0.4s ease;
+    animation:neonGlow 2s infinite alternate;
+}
+
+.gallery-item::before{
+    content:'';
+    position:absolute;
+    top:-50%;
+    left:-50%;
+    width:200%;
+    height:200%;
+    background:linear-gradient(
+        45deg,
+        transparent,
+        rgba(0,234,255,0.4),
+        transparent
+    );
+    transform:rotate(25deg);
+    animation:shine 4s linear infinite;
 }
 
 .gallery-item:hover{
-    transform:translateY(-10px);
-    box-shadow:0 0 25px #00eaff;
+    transform:translateY(-12px) scale(1.03);
+    box-shadow:
+    0 0 15px #00eaff,
+    0 0 30px #00eaff,
+    0 0 60px #00eaff;
 }
 
 .gallery-item img{
     width:100%;
     height:220px;
     object-fit:cover;
+    transition:0.5s;
+}
+
+.gallery-item:hover img{
+    transform:scale(1.08);
 }
 
 .gallery-item p{
     padding:15px;
     font-size:18px;
     font-weight:bold;
+    color:white;
+    position:relative;
+    z-index:2;
+}
+
+/* GALLERY ANIMATION */
+
+@keyframes neonGlow{
+
+    from{
+        box-shadow:
+        0 0 10px #00eaff,
+        0 0 20px #00eaff;
+    }
+
+    to{
+        box-shadow:
+        0 0 20px #00eaff,
+        0 0 40px #00eaff,
+        0 0 80px #00eaff;
+    }
+}
+
+@keyframes shine{
+
+    0%{
+        transform:translateX(-100%) rotate(25deg);
+    }
+
+    100%{
+        transform:translateX(100%) rotate(25deg);
+    }
 }
 
 /* MUSIC BUTTON */
@@ -432,6 +495,8 @@ body{
 
 <div class="main">
 
+<!-- NAVBAR -->
+
 <div class="navbar">
 
 <h2 class="logo">VeeTech Repair And Service</h2>
@@ -455,6 +520,8 @@ body{
 </div>
 
 </div>
+
+<!-- CONTENT -->
 
 <div class="content">
 
@@ -503,6 +570,8 @@ arizjayvee3@gmail.com
 </button>
 
 </div>
+
+<!-- LOGIN FORM -->
 
 <div class="form">
 
