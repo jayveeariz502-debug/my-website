@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>VeeTech Repair And Service</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:linear-gradient(135deg,#020024,#090979,#00d4ff);
+    background-size:400% 400%;
+    animation:neonBG 10s ease infinite;
+    color:white;
+    overflow-x:hidden;
+}
+
+/* BACKGROUND ANIMATION */
+
+.background-animation{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    overflow:hidden;
+    z-index:-1;
+}
+
+.background-animation::before,
+.background-animation::after{
+    content:'';
+    position:absolute;
+    width:600px;
+    height:600px;
+    border-radius:50%;
+    background:rgba(0,234,255,0.15);
+    filter:blur(80px);
+    animation:moveBg 15s linear infinite;
+}
+
+.background-animation::after{
+    background:rgba(255,0,255,0.15);
+    top:40%;
+    left:50%;
+    animation-duration:20s;
+}
+
+@keyframes moveBg{
+
+    0%{
+        transform:translate(-100px,-100px);
+    }
+
+    50%{
+        transform:translate(300px,200px);
+    }
+
+    100%{
+        transform:translate(-100px,-100px);
+    }
+}
+
+@keyframes neonBG{
+
+    0%{
+        background-position:0% 50%;
+    }
+
+    50%{
+        background-position:100% 50%;
+    }
+
+    100%{
+        background-position:0% 50%;
+    }
+}
+
+.main{
+    width:100%;
+    min-height:100vh;
+    padding-bottom:50px;
+}
+
+/* NAVBAR */
+
+.navbar{
+    width:100%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 40px;
+    flex-wrap:wrap;
+    gap:20px;
+}
+
+.logo{
+    color:#00eaff;
+    font-size:35px;
+    font-weight:bold;
+    text-shadow:
+    0 0 10px #00eaff,
+    0 0 20px #00eaff,
+    0 0 40px #00eaff;
+}
+
+.menu ul{
+    display:flex;
+    list-style:none;
+    gap:20px;
+    flex-wrap:wrap;
+    justify-content:center;
+}
+
+.menu ul li a{
+    text-decoration:none;
+    color:white;
+    font-weight:bold;
+    transition:0.3s;
+}
+
+.menu ul li a:hover{
+    color:#00eaff;
+    text-shadow:0 0 10px #00eaff;
+}
+
+/* SEARCH */
+
+.search{
+    display:flex;
+    gap:10px;
+    flex-wrap:wrap;
+}
+
+.srch{
+    padding:10px;
+    border:1px solid #00eaff;
+    background:transparent;
+    color:white;
+    border-radius:5px;
+    outline:none;
+}
+
+.btn{
+    padding:10px 20px;
+    border:none;
+    background:#00eaff;
+    color:black;
+    font-weight:bold;
+    border-radius:5px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.btn:hover{
+    background:white;
+    box-shadow:0 0 20px #00eaff;
+}
+
+/* CONTENT */
+
+.content{
+    width:90%;
+    max-width:1200px;
+    margin:auto;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:40px;
+    padding-top:60px;
+}
+
+.text-content{
+    flex:1;
+    min-width:300px;
+}
+
+.text-content h1{
+    font-size:60px;
+    line-height:1.2;
+    text-shadow:0 0 20px #00eaff;
+}
+
+.text-content span{
+    color:#00eaff;
+}
+
+.par{
+    margin-top:20px;
+    line-height:30px;
+    font-size:18px;
+}
+
+.par a{
+    color:#00eaff;
+    text-decoration:none;
+}
+
+.cn{
+    margin-top:25px;
+    padding:14px 30px;
+    border:none;
+    border-radius:10px;
+    background:#00eaff;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.cn a{
+    text-decoration:none;
+    color:black;
+    font-weight:bold;
+}
+
+.cn:hover{
+    transform:scale(1.05);
+    box-shadow:0 0 25px #00eaff;
+}
+
+/* LOGIN FORM */
+
+.form{
+    width:320px;
+    background:rgba(0,0,0,0.5);
+    border:1px solid #00eaff;
+    border-radius:15px;
+    padding:30px;
+    box-shadow:0 0 20px #00eaff;
+    backdrop-filter:blur(10px);
+}
+
+.form h2{
+    text-align:center;
+    color:#00eaff;
+    margin-bottom:20px;
+}
+
+.form input{
+    width:100%;
+    padding:12px;
+    margin-top:15px;
+    background:transparent;
+    border:none;
+    border-bottom:1px solid #00eaff;
+    color:white;
+    outline:none;
+}
+
+.btnn{
+    width:100%;
+    margin-top:25px;
+    padding:12px;
+    border:none;
+    border-radius:10px;
+    background:#00eaff;
+    font-weight:bold;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.btnn:hover{
+    box-shadow:0 0 20px #00eaff;
+}
+
+.link{
+    text-align:center;
+    margin-top:20px;
+}
+
+.link a{
+    color:#00eaff;
+    text-decoration:none;
+}
+
+.liw{
+    text-align:center;
+    margin-top:20px;
+}
+
+.icons{
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    margin-top:15px;
+    font-size:25px;
+}
+
+.icons a{
+    color:white;
+    transition:0.3s;
+}
+
+.icons a:hover{
+    color:#00eaff;
+}
+
+/* GALLERY */
+
+.gallery{
+    width:90%;
+    margin:auto;
+    padding:60px 0;
+    text-align:center;
+}
+
+.gallery h2{
+    font-size:40px;
+    margin-bottom:40px;
+    color:#00eaff;
+    text-shadow:0 0 15px #00eaff;
+}
+
+.gallery-container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+}
+
+.gallery-item{
+    background:rgba(255,255,255,0.08);
+    border:1px solid #00eaff;
+    border-radius:15px;
+    overflow:hidden;
+    backdrop-filter:blur(10px);
+    transition:0.3s;
+}
+
+.gallery-item:hover{
+    transform:translateY(-10px);
+    box-shadow:0 0 25px #00eaff;
+}
+
+.gallery-item img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+}
+
+.gallery-item p{
+    padding:15px;
+    font-size:18px;
+    font-weight:bold;
+}
+
+/* MUSIC BUTTON */
+
+.music-btn{
+    position:fixed;
+    bottom:20px;
+    right:20px;
+    padding:12px 20px;
+    border:none;
+    border-radius:10px;
+    background:#00eaff;
+    color:black;
+    font-weight:bold;
+    cursor:pointer;
+    z-index:999;
+    box-shadow:0 0 20px #00eaff;
+}
+
+.music-btn:hover{
+    transform:scale(1.05);
+}
+
+/* RESPONSIVE */
+
+@media(max-width:768px){
+
+    .navbar{
+        flex-direction:column;
+        text-align:center;
+    }
+
+    .content{
+        flex-direction:column;
+        text-align:center;
+    }
+
+    .text-content h1{
+        font-size:40px;
+    }
+
+    .par{
+        font-size:16px;
+        line-height:26px;
+    }
+
+    .search{
+        justify-content:center;
+        width:100%;
+    }
+
+    .srch{
+        width:65%;
+    }
+
+    .btn{
+        width:30%;
+    }
+
+    .form{
+        width:100%;
+        max-width:350px;
+    }
+
+    .menu ul{
+        gap:15px;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="background-animation"></div>
+
+<div class="main">
+
+<div class="navbar">
+
+<h2 class="logo">VeeTech Repair And Service</h2>
+
+<div class="menu">
+<ul>
+<li><a href="#">HOME</a></li>
+<li><a href="#">ABOUT</a></li>
+<li><a href="#">SERVICE</a></li>
+<li><a href="#iphonebypass">IPHONE BYPASS</a></li>
+<li><a href="#">SOLAR INSTALLER</a></li>
+<li><a href="#">CCTV INSTALLER</a></li>
+<li><a href="#">ELECTRICAL INSTALLER</a></li>
+<li><a href="#">CONTACT</a></li>
+</ul>
+</div>
+
+<div class="search">
+<input class="srch" type="search" placeholder="Search Here">
+<button class="btn">Search</button>
+</div>
+
+</div>
+
+<div class="content">
+
+<div class="text-content">
+
+<h1>
+VeeTech Repair <br>
+<span>And Service</span>
+</h1>
+
+<p class="par">
+
+PC / LAPTOP / PRINTER / CELLPHONE <br>
+IPHONE BYPASS / CCTV INSTALLER <br>
+SOLAR INSTALLER / ELECTRICAL INSTALLER
+
+<br><br>
+
+🛠️ Web Developer: Jayvee Ariz
+
+<br><br>
+
+📘 Facebook:
+<a href="https://facebook.com" target="_blank">
+Jayvee Ariz
+</a>
+
+<br><br>
+
+📧 Gmail:
+<a href="mailto:arizjayvee3@gmail.com">
+arizjayvee3@gmail.com
+</a>
+
+<br><br>
+
+📞 Call & Text:
+<a href="tel:09095195802">
+09095195802
+</a>
+
+</p>
+
+<button class="cn">
+<a href="tel:09095195802">CALL NOW!!</a>
+</button>
+
+</div>
+
+<div class="form">
+
+<h2>Coming Soon!!!</h2>
+
+<input type="email" placeholder="Enter Email Here">
+
+<input type="password" placeholder="Enter Password Here">
+
+<button class="btnn">Login</button>
+
+<p class="link">
+Don't have an account?<br>
+<a href="#">Sign up here</a>
+</p>
+
+<p class="liw">Log in with</p>
+
+<div class="icons">
+<a href="#"><ion-icon name="logo-facebook"></ion-icon></a>
+<a href="#"><ion-icon name="logo-instagram"></ion-icon></a>
+<a href="#"><ion-icon name="logo-google"></ion-icon></a>
+</div>
+
+</div>
+
+</div>
+
+<!-- IPHONE BYPASS SECTION -->
+
+<section id="iphonebypass" class="gallery">
+
+<h2>iPhone Bypass Services</h2>
+
+<div class="gallery-container">
+
+<div class="gallery-item">
+<img src="bypass1.jpg" alt="iPhone Bypass">
+<p>iCloud Bypass</p>
+</div>
+
+<div class="gallery-item">
+<img src="bypass2.jpg" alt="iPhone Unlock">
+<p>Carrier Unlock</p>
+</div>
+
+<div class="gallery-item">
+<img src="bypass3.jpg" alt="Activation Lock">
+<p>Activation Lock Removal</p>
+</div>
+
+<div class="gallery-item">
+<img src="bypass4.jpg" alt="Repair">
+<p>iPhone Repair Service</p>
+</div>
+
+</div>
+
+</section>
+
+</div>
+
+<!-- MUSIC BUTTON -->
+
+<button class="music-btn" onclick="toggleMusic()">
+🎵 Play Music
+</button>
+
+<!-- AUDIO -->
+
+<audio id="bgmusic" loop>
+<source src="sound.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+
+const music = document.getElementById("bgmusic");
+const button = document.querySelector(".music-btn");
+
+let isPlaying = false;
+
+function toggleMusic(){
+
+    if(!isPlaying){
+
+        music.play();
+        music.volume = 0.5;
+
+        button.innerHTML = "⏸ Pause Music";
+
+        isPlaying = true;
+
+    }else{
+
+        music.pause();
+
+        button.innerHTML = "🎵 Play Music";
+
+        isPlaying = false;
+    }
+}
+
+</script>
+
+<script type="module"
+src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js">
+</script>
+
+<script nomodule
+src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js">
+</script>
+
+</body>
+</html>
