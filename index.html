@@ -212,9 +212,15 @@ body{
 
 /* Bagong logo wrapper sa navbar para magkatabi ang pic at text */
 .logo-container {
-    display: flex;
-    align-items: center;
-    gap: 15px;
+    display: flex !important;
+    align-items: center !important; /* Para maging pantay ang gitna ng logo at ng text */
+    gap: 10px !important;           /* Awang sa pagitan ng logo image at ng text */
+}
+
+.logo-container h2 {
+    white-space: nowrap !important; /* Pinipilit ang text na manatili sa isang linya lang kung kasya */
+    font-size: 20px !important;     /* Pwede mong liitan o lakihan ang text dito kung gusto mo */
+    margin: 0 !important;
 }
 
 .nav-logo-img {
