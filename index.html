@@ -213,27 +213,26 @@ body{
 /* Bagong logo wrapper sa navbar para magkatabi ang pic at text */
 .logo-container {
     display: flex !important;
-    align-items: center !important; /* Para maging pantay ang gitna ng logo at ng text */
-    gap: 10px !important;           /* Awang sa pagitan ng logo image at ng text */
+    align-items: center !important; 
+    gap: 10px !important;           
 }
 
 .logo-container h2 {
-    white-space: nowrap !important; /* Pinipilit ang text na manatili sa isang linya lang kung kasya */
-    font-size: 20px !important;     /* Pwede mong liitan o lakihan ang text dito kung gusto mo */
+    white-space: nowrap !important; 
+    font-size: 20px !important;     
     margin: 0 !important;
 }
 
 .nav-logo-img {
     width: 45px;
     height: auto;
-    /* Eto ang magic trick: pinapawala nito ang black background */
     mix-blend-mode: screen; 
     filter: drop-shadow(0 0 8px #00eaff);
 }
 
 .logo {
-    width: 45px !important;  /* Ito ang magpapakasya sa kaniya sa loob ng navbar */
-    height: auto !important; /* Para hindi ma-stretch ang proportion */
+    width: 45px !important;  
+    height: auto !important; 
     object-fit: contain;
 }
 
@@ -299,10 +298,8 @@ body{
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
-    
-    /* ETO ANG DAGDAG: Lalagyan natin ng 50px na pagitan ang text at logo */
     gap: 50px !important; 
-    padding-top: 80px !important; /* Dinagdagan natin para hindi dikit sa Navbar sa itaas */
+    padding-top: 80px !important; 
 }
 
 .text-content{
@@ -323,7 +320,7 @@ body{
 /* Bagong Section para sa Malaking VT Logo sa Kanan */
 .image-content {
     flex: 1;
-    min-width: 400px; /* Nilakihan para magkaroon ng malawak na espasyo ang logo */
+    min-width: 400px; 
     display: flex;
     justify-content: center;
     align-items: center;
@@ -339,8 +336,6 @@ body{
     animation: logoFloat 4s ease-in-out infinite;
 }
 
-
-/* Dagdag na animation para gumagalaw nang kaunti pataas-pababa yung malaking logo */
 @keyframes logoFloat {
     0%, 100% { transform: translateY(0); }
     50% { transform: translateY(-15px); }
@@ -377,7 +372,6 @@ body{
     transform:scale(1.05);
     box-shadow:0 0 25px #00eaff;
 }
-
 
 /* ================= GALLERY ================= */
 
@@ -450,28 +444,38 @@ body{
     transform:scale(1.05);
 }
 
-/* ================= RESPONSIVE (MOBILE REPAIR) ================= */
+/* ================= RESPONSIVE (BAGONG IMPLEMENTASYON) ================= */
 
 @media(max-width:768px){
 
     .navbar{
-        flex-direction:column !important;
+        flex-direction: column !important;
         text-align:center !important;
         padding: 15px !important;
         gap: 15px !important;
     }
 
-    /* Pinapanatiling magkatabi ang Logo at Text imbes na maghiwalay */
+    /* PINILIT NA MAGKATABI ANG LOGO AT TEXT */
     .logo-container {
         flex-direction: row !important;
         justify-content: center !important;
+        align-items: center !important;
         width: 100% !important;
-        gap: 10px !important;
+        gap: 8px !important;
     }
 
     .logo-container h2 {
         white-space: nowrap !important;
-        font-size: 16px !important; /* Pinaliit nang bahagya para kasya sa screens ng phone */
+        font-size: 14px !important; /* Sakto sa mobile screens para di lumampas */
+    }
+
+    #maliit-na-logo {
+        width: 40px !important;
+        max-width: 40px !important;
+        height: 40px !important;
+        max-height: 40px !important;
+        object-fit: contain !important;
+        display: inline-block !important;
     }
 
     .menu {
@@ -482,15 +486,15 @@ body{
         flex-direction: row !important;
         flex-wrap: wrap !important;
         justify-content: center !important;
-        gap: 12px !important;
-        padding: 0 5px !important;
+        gap: 10px !important;
+        padding: 0 !important;
     }
     
     .menu ul li {
         background: rgba(0, 234, 255, 0.05);
-        padding: 6px 12px;
+        padding: 5px 10px;
         border-radius: 5px;
-        border: 1px solid rgba(0, 234, 255, 0.2);
+        border: 1px solid rgba(0, 234, 255, 0.15);
     }
 
     .content{
@@ -501,36 +505,34 @@ body{
     }
 
     .text-content h1{
-        font-size:35px !important;
+        font-size:32px !important;
     }
 
     .image-content {
-        order: -1 !important; /* Inuuna pa rin ang malaking logo sa mobile view */
+        order: -1 !important; 
         min-width: 100% !important;
     }
 
     .large-hero-logo {
-        max-width: 240px !important;
+        max-width: 220px !important;
     }
 
     .par{
-        font-size:16px !important;
-        line-height:26px !important;
+        font-size:15px !important;
+        line-height:24px !important;
     }
 
-    /* Ginawang plantsado at sakto ang Search bar sa mobile screen */
     .search{
         justify-content:center !important;
         width:100% !important;
-        max-width: 100% !important;
     }
 
     .srch{
-        width:70% !important;
+        width:65% !important;
     }
 
     .btn{
-        width:25% !important;
+        width:30% !important;
     }
 }
 
@@ -538,8 +540,6 @@ body{
 </head>
 
 <body>
-
-<!-- ================= TECH BACKGROUND ================= -->
 
 <div class="tech-background">
 
@@ -582,9 +582,8 @@ body{
 
 <div class="navbar">
 
-<!-- Nilagay sa loob ng logo-container para magkasama ang logo image at logo text -->
 <div class="logo-container">
-    <img src="image_82e34b.png" alt="VT Logo" style="width: 45px !important; height: 45px !important; max-width: 45px !important; max-height: 45px !important; object-fit: contain !important; display: inline-block !important;">
+    <img src="image_82e34b.png?v=3" id="maliit-na-logo" alt="VT Logo" style="width: 45px !important; height: 45px !important; max-width: 45px !important; max-height: 45px !important; object-fit: contain !important; display: inline-block !important;">
     <h2 class="logo">VeeTech Repair And Service</h2>
 </div>
 
@@ -639,7 +638,6 @@ body{
         09488049719
     </a>
 </p>
-
 
 <button class="cn">
 <a href="tel:09488049719">CALL NOW!!</a>
