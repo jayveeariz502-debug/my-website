@@ -3,7 +3,7 @@
 
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
 <title>VeeTech Repair And Service</title>
 
@@ -25,6 +25,7 @@ body{
     color:white;
     overflow-x:hidden;
     position:relative;
+    width: 100%;
 }
 
 /* ================= ULTRA TECH BACKGROUND ================= */
@@ -210,30 +211,18 @@ body{
     gap:20px;
 }
 
-/* Bagong logo wrapper sa navbar para magkatabi ang pic at text */
 .logo-container {
     display: flex !important;
     align-items: center !important; 
-    gap: 10px !important;           
+    gap: 12px !important;           
 }
 
-.logo-container h2 {
-    white-space: nowrap !important; 
-    font-size: 20px !important;     
-    margin: 0 !important;
-}
-
-.nav-logo-img {
-    width: 45px;
-    height: auto;
-    mix-blend-mode: screen; 
-    filter: drop-shadow(0 0 8px #00eaff);
-}
-
-.logo {
-    width: 45px !important;  
-    height: auto !important; 
-    object-fit: contain;
+.logo-text {
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+    margin: 0;
+    text-shadow: 0 0 10px rgba(0, 234, 255, 0.5);
 }
 
 .menu ul{
@@ -317,7 +306,6 @@ body{
     color:#00eaff;
 }
 
-/* Bagong Section para sa Malaking VT Logo sa Kanan */
 .image-content {
     flex: 1;
     min-width: 400px; 
@@ -444,38 +432,46 @@ body{
     transform:scale(1.05);
 }
 
-/* ================= RESPONSIVE (BAGONG IMPLEMENTASYON) ================= */
+/* ================= RESPONSIVE FIXED VIEW ================= */
 
 @media(max-width:768px){
+
+    body {
+        width: 100% !important;
+        overflow-x: hidden !important;
+    }
 
     .navbar{
         flex-direction: column !important;
         text-align:center !important;
-        padding: 15px !important;
+        padding: 15px 10px !important;
         gap: 15px !important;
+        width: 100% !important;
     }
 
-    /* PINILIT NA MAGKATABI ANG LOGO AT TEXT */
+    /* INAYOS PARA LAGING IPIT AT SAKTO SA SCREEN ANG LOGO AT TEXT */
     .logo-container {
         flex-direction: row !important;
         justify-content: center !important;
         align-items: center !important;
         width: 100% !important;
+        max-width: 100% !important;
         gap: 8px !important;
+        overflow: hidden !important;
     }
 
-    .logo-container h2 {
+    .logo-text {
+        font-size: 16px !important; /* Pinaliit nang kaunti para magkasya sa 5G view ng cp mo */
         white-space: nowrap !important;
-        font-size: 14px !important; /* Sakto sa mobile screens para di lumampas */
+        width: auto !important;
     }
 
     #maliit-na-logo {
-        width: 40px !important;
-        max-width: 40px !important;
-        height: 40px !important;
-        max-height: 40px !important;
+        width: 35px !important;
+        max-width: 35px !important;
+        height: 35px !important;
+        max-height: 35px !important;
         object-fit: contain !important;
-        display: inline-block !important;
     }
 
     .menu {
@@ -492,7 +488,7 @@ body{
     
     .menu ul li {
         background: rgba(0, 234, 255, 0.05);
-        padding: 5px 10px;
+        padding: 6px 10px;
         border-radius: 5px;
         border: 1px solid rgba(0, 234, 255, 0.15);
     }
@@ -502,6 +498,7 @@ body{
         text-align:center !important;
         gap: 30px !important;
         padding-top: 30px !important;
+        width: 100% !important;
     }
 
     .text-content h1{
@@ -540,6 +537,8 @@ body{
 </head>
 
 <body>
+
+<!-- ================= TECH BACKGROUND ================= -->
 
 <div class="tech-background">
 
@@ -583,8 +582,8 @@ body{
 <div class="navbar">
 
 <div class="logo-container">
-    <img src="image_82e34b.png?v=3" id="maliit-na-logo" alt="VT Logo" style="width: 45px !important; height: 45px !important; max-width: 45px !important; max-height: 45px !important; object-fit: contain !important; display: inline-block !important;">
-    <h2 class="logo">VeeTech Repair And Service</h2>
+    <img src="image_82e34b.png?v=4" id="maliit-na-logo" alt="VT Logo" style="width: 45px; height: 45px; object-fit: contain; mix-blend-mode: screen; filter: drop-shadow(0 0 8px #00eaff);">
+    <h2 class="logo-text">VeeTech Repair And Service</h2>
 </div>
 
 <div class="menu">
