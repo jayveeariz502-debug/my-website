@@ -213,18 +213,26 @@ body{
 
 .logo-container {
     display: flex !important;
-    justify-content: flex-start !important;
     align-items: center !important; 
+    gap: 15px !important;           
 }
 
-/* Ito ang sukat ng mahabang logo image mo sa Desktop mode */
+/* KONTROLADO ANG LAKI NG LOGO SA DESKTOP PC (Dito nire-restrict para hindi sumabog) */
 #maliit-na-logo {
-    width: 320px !important;
-    max-width: 100% !important;
+    width: 120px !important; 
+    max-width: 120px !important;
     height: auto !important;
-    object-fit: contain;
+    object-fit: contain !important;
     mix-blend-mode: screen; 
     filter: drop-shadow(0 0 8px #00eaff);
+}
+
+.logo-text {
+    font-size: 22px;
+    font-weight: bold;
+    color: white;
+    margin: 0;
+    text-shadow: 0 0 10px rgba(0, 234, 255, 0.5);
 }
 
 .menu ul{
@@ -434,7 +442,7 @@ body{
     transform:scale(1.05);
 }
 
-/* ================= RESPONSIVE FIXED VIEW ================= */
+/* ================= RESPONSIVE MEDIA QUERIES (MOBILE FIXES) ================= */
 
 @media(max-width:768px){
 
@@ -452,15 +460,24 @@ body{
     }
 
     .logo-container {
+        flex-direction: column !important; /* Pinagpatong natin kapag mobile para hindi sumabog pakanan! */
         justify-content: center !important;
+        align-items: center !important;
         width: 100% !important;
-        max-width: 100% !important;
+        gap: 8px !important;
     }
 
-    /* FIX: Pinapaliit ang buong imahe para sakto sa lapad ng cellphone nang hindi lumalampas! */
+    /* KONTROLADO ANG LAKI NG MALAKING LOGO MO KAPAG NASA CELLPHONE PRE! */
     #maliit-na-logo {
-        width: 240px !important; 
-        max-width: 90% !important;
+        width: 150px !important; 
+        max-width: 150px !important;
+        height: auto !important;
+    }
+
+    .logo-text {
+        font-size: 18px !important;
+        white-space: normal !important; /* Pwede nang mag-wrap para kasya sa screen nating lahat */
+        text-align: center !important;
     }
 
     .menu {
@@ -527,8 +544,6 @@ body{
 
 <body>
 
-<!-- ================= TECH BACKGROUND ================= -->
-
 <div class="tech-background">
 
 <div class="tech-grid"></div>
@@ -571,8 +586,8 @@ body{
 <div class="navbar">
 
 <div class="logo-container">
-    <!-- Tinanggal natin ang hiwalay na text tag dahil kasama na pala sa image mismo ang pangalan -->
-    <img src="image_82e34b.png?v=5" id="maliit-na-logo" alt="VeeTech Repair And Service">
+    <img src="image_82e34b.png?v=6" id="maliit-na-logo" alt="VT Logo">
+    <h2 class="logo-text">VeeTech Repair And Service</h2>
 </div>
 
 <div class="menu">
