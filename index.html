@@ -210,14 +210,28 @@ body{
     gap:20px;
 }
 
+/* Bagong logo wrapper sa navbar para magkatabi ang pic at text */
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.nav-logo-img {
+    width: 45px;
+    height: auto;
+    /* Eto ang magic trick: pinapawala nito ang black background */
+    mix-blend-mode: screen; 
+    filter: drop-shadow(0 0 8px #00eaff);
+}
+
 .logo{
     color:#00eaff;
-    font-size:35px;
+    font-size:24px; /* Binabaan ko nang konti para magkasya silang dalawa nang maayos */
     font-weight:bold;
     text-shadow:
     0 0 10px #00eaff,
-    0 0 20px #00eaff,
-    0 0 40px #00eaff;
+    0 0 20px #00eaff;
 }
 
 .menu ul{
@@ -274,16 +288,18 @@ body{
 
 /* ================= CONTENT ================= */
 
-.content{
-    width:90%;
-    max-width:1200px;
-    margin:auto;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    flex-wrap:wrap;
-    gap:40px;
-    padding-top:60px;
+.content {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    
+    /* ETO ANG DAGDAG: Lalagyan natin ng 50px na pagitan ang text at logo */
+    gap: 50px !important; 
+    padding-top: 80px !important; /* Dinagdagan natin para hindi dikit sa Navbar sa itaas */
 }
 
 .text-content{
@@ -299,6 +315,32 @@ body{
 
 .text-content span{
     color:#00eaff;
+}
+
+/* Bagong Section para sa Malaking VT Logo sa Kanan */
+.image-content {
+    flex: 1;
+    min-width: 400px; /* Nilakihan para magkaroon ng malawak na espasyo ang logo */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.large-hero-logo {
+    display: block !important;
+    width: 450px !important;       
+    max-width: 100% !important;
+    height: auto !important;
+    mix-blend-mode: screen; 
+    filter: drop-shadow(0 0 30px rgba(0, 234, 255, 0.6));
+    animation: logoFloat 4s ease-in-out infinite;
+}
+
+
+/* Dagdag na animation para gumagalaw nang kaunti pataas-pababa yung malaking logo */
+@keyframes logoFloat {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
 }
 
 .par{
@@ -414,6 +456,11 @@ body{
         text-align:center;
     }
 
+    .logo-container {
+        flex-direction: column;
+        gap: 10px;
+    }
+
     .content{
         flex-direction:column;
         text-align:center;
@@ -421,6 +468,14 @@ body{
 
     .text-content h1{
         font-size:40px;
+    }
+
+    .image-content {
+        order: -1; /* Inuuna ang logo sa mobile bago ang text para maganda tingnan */
+    }
+
+    .large-hero-logo {
+        max-width: 280px;
     }
 
     .par{
@@ -499,7 +554,11 @@ body{
 
 <div class="navbar">
 
-<h2 class="logo">VeeTech Cellphone and Laptop Repair Service</h2>
+<!-- Nilagay sa loob ng logo-container para magkasama ang logo image at logo text -->
+<div class="logo-container">
+    <img src="image_82e34b.png.png" alt="VT Logo" class="nav-logo-img">
+    <h2 class="logo">VeeTech Repair And Service</h2>
+</div>
 
 <div class="menu">
 <ul>
@@ -521,18 +580,10 @@ body{
 
 <div class="content">
 
-<div class="text-content">
-
-<h1>
-VeeTech Cellphone <br>
-<span>And Laptop Repair Service</span>
-</h1>
-
-<p class="par">
-
-PC / LAPTOP / PRINTER / CELLPHONE <br>
-IPHONE BYPASS / GOOGLE FRP / CCTV INSTALLER <br>
-SOLAR INSTALLER 
+<<div class="text-content">
+        <h1>VeeTech Cellphone <br>And Laptop <br>Repair Service</h1>
+        <p>PC / LAPTOP / PRINTER / CELLPHONE / IPHONE BYPASS
+        <P>GOOGLE FRP / CCTV INSTALLER / SOLAR INSTALLER</P>
 
 <br><br>
 
@@ -540,30 +591,37 @@ SOLAR INSTALLER
 
 <br><br>
 
-📘 Facebook:
-<a href="https://www.facebook.com/VeeTechGSMSamdwhich62502" target="_blank">
-VeeTech Cellphone And Laptop Repair Service
-</a>
+<p style="color: #ffffff !important;">
+    📘 Facebook:
+    <a href="https://www.facebook.com/VeeTechGSMSamdwhich62502" target="_blank" style="color: #ffffff !important; text-decoration: none;">
+        VeeTech Cellphone And Laptop Repair Service
+    </a>
 
-<br><br>
+    <br><br>
 
-📧 Gmail:
-<a href="mailto:arizjayvee3@gmail.com">
-arizjayvee3@gmail.com
-</a>
+    📧 Gmail:
+    <a href="mailto:arizjayvee3@gmail.com" style="color: #ffffff !important; text-decoration: none;"> 
+        arizjayvee3@gmail.com
+    </a>
 
-<br><br>
+    <br><br>
 
-📞 Call & Text:
-<a href="tel:09488049719">
-09488049719
-</a>
-
+    📞 Call & Text:
+    <a href="tel:09488049719" style="color: #ffffff !important; text-decoration: none;"> 
+        09488049719
+    </a>
 </p>
+
 
 <button class="cn">
 <a href="tel:09488049719">CALL NOW!!</a>
 </button>
+
+</div>
+
+<div class="image-content">
+        <img src="image_83dbaa.png.png" alt="VeeTech Large Logo" class="large-hero-logo">
+    </div>
 
 </div>
 
