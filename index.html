@@ -450,74 +450,89 @@ body{
     transform:scale(1.05);
 }
 
-/* ================= RESPONSIVE ================= */
+/* ================= RESPONSIVE (MOBILE REPAIR) ================= */
 
 @media(max-width:768px){
 
     .navbar{
-        flex-direction:column;
-        text-align:center;
+        flex-direction:column !important;
+        text-align:center !important;
+        padding: 15px !important;
+        gap: 15px !important;
     }
 
+    /* Pinapanatiling magkatabi ang Logo at Text imbes na maghiwalay */
     .logo-container {
-        flex-direction: column;
-        gap: 10px;
+        flex-direction: row !important;
+        justify-content: center !important;
+        width: 100% !important;
+        gap: 10px !important;
     }
 
-    .content{
-        flex-direction:column;
-        text-align:center;
+    .logo-container h2 {
+        white-space: nowrap !important;
+        font-size: 16px !important; /* Pinaliit nang bahagya para kasya sa screens ng phone */
     }
 
-    .text-content h1{
-        font-size:40px;
-    }
-
-    .image-content {
-        order: -1; /* Inuuna ang logo sa mobile bago ang text para maganda tingnan */
-    }
-
-    .large-hero-logo {
-        max-width: 280px;
-    }
-
-    .par{
-        font-size:16px;
-        line-height:26px;
-    }
-
-    .search{
-        justify-content:center;
-        width:100%;
-    }
-
-    .srch{
-        width:65%;
-    }
-
-    .btn{
-        width:30%;
-    }
-
-    .form{
-        width:100%;
-        max-width:350px;
+    .menu {
+        width: 100% !important;
     }
 
     .menu ul{
-        gap:15px;
+        flex-direction: row !important;
+        flex-wrap: wrap !important;
+        justify-content: center !important;
+        gap: 12px !important;
+        padding: 0 5px !important;
     }
-} /* Ito yung line 504 mo */
+    
+    .menu ul li {
+        background: rgba(0, 234, 255, 0.05);
+        padding: 6px 12px;
+        border-radius: 5px;
+        border: 1px solid rgba(0, 234, 255, 0.2);
+    }
 
-    #maliit-na-logo {
-        width: 45px !important;
-        max-width: 45px !important;
-        height: 45px !important;
-        max-height: 45px !important;
-        object-fit: contain !important;
-        display: inline-block !important;
-        margin-right: 10px !important;
+    .content{
+        flex-direction:column !important;
+        text-align:center !important;
+        gap: 30px !important;
+        padding-top: 30px !important;
     }
+
+    .text-content h1{
+        font-size:35px !important;
+    }
+
+    .image-content {
+        order: -1 !important; /* Inuuna pa rin ang malaking logo sa mobile view */
+        min-width: 100% !important;
+    }
+
+    .large-hero-logo {
+        max-width: 240px !important;
+    }
+
+    .par{
+        font-size:16px !important;
+        line-height:26px !important;
+    }
+
+    /* Ginawang plantsado at sakto ang Search bar sa mobile screen */
+    .search{
+        justify-content:center !important;
+        width:100% !important;
+        max-width: 100% !important;
+    }
+
+    .srch{
+        width:70% !important;
+    }
+
+    .btn{
+        width:25% !important;
+    }
+}
 
 </style>
 </head>
