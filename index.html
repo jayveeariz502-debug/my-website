@@ -354,6 +354,30 @@ body{
     display: block;
 }
 
+/* PRINTER Banner Glow Fix */
+#printerrepair .gallery-container {
+    width: 100% !important;
+    display: flex !important;
+    justify-content: center !important;
+}
+
+#printerrepair .gallery-item {
+    width: 90% !important;
+    max-width: 1000px !important;
+    
+    /* Ibinabalik natin ang style dito */
+    background: rgba(255, 255, 255, 0.05) !important;
+    border: 2px solid #00eaff !important;
+    border-radius: 20px !important;
+    animation: neonGlow 2s infinite alternate !important; /* DITO NANGGALING ANG GLOW */
+    overflow: hidden !important;
+}
+
+#printerrepair .gallery-item img {
+    width: 100% !important;
+    height: auto !important;
+    display: block !important;
+}
 
 /* CCTV Banner Glow Fix */
 #cctvinstaller .gallery-container {
@@ -648,7 +672,7 @@ body{
         <h2>Laptop and PC Repair Services</h2>
         <div class="gallery-container">
             <div class="gallery-item">
-                <img src="Laptop.png" alt="Laptop Repair">
+                <img src="Laptop.png" alt="LAPTOP REPAIR AND PC">
                 <p>Laptop Repair</p>
             </div>
             <div class="gallery-item">
@@ -658,12 +682,23 @@ body{
         </div>
     </section>
 
+    <!-- NEW SECTION: PRINTER REPAIR GALLERY -->
+    <section id="printerrepair" class="gallery">
+        <h2>PRINTER REPAIR</h2>
+        <div class="gallery-container">
+            <div class="gallery-item">
+                <img src="Printer.png" alt="PRINTER">
+                <p>PRINTER REPAIR</p>
+            </div>
+        </div>
+    </section>
+
     <!-- NEW SECTION: CCTV INSTALLER GALLERY -->
     <section id="cctvinstaller" class="gallery">
         <h2>CCTV Installation Services</h2>
         <div class="gallery-container">
             <div class="gallery-item">
-                <img src="CCTV.png" alt="CCTV Camera Setup">
+                <img src="CCTV.png" alt="CCTV INSTALLER">
                 <p>CCTV Camera Setup</p>
             </div>
         </div>
@@ -674,7 +709,7 @@ body{
         <h2>SOLAR INSTALLER AND REPAIR</h2>
         <div class="gallery-container">
             <div class="gallery-item">
-                <img src="Solar.png" alt="CCTV Camera Setup">
+                <img src="Solar.png" alt="SOLAR INSTALLER">
                 <p>SOLAR INSTALLER AND REPAIR</p>
             </div>
         </div>
@@ -685,13 +720,13 @@ body{
         <h2>THAI SPEAKER SALES AND MAKER</h2>
         <div class="gallery-container">
             <div class="gallery-item">
-                <img src="Thai.png" alt="CCTV Camera Setup">
+                <img src="Thai.png" alt="THAI SPEAKER SALE">
                 <p>THAI SPEAKER SALES AND MAKER</p>
             </div>
         </div>
     </section>
 
-    <footer style="text-align: center; padding: 40px 20px; color: rgba(255, 255, 255, 0.6); font-size: 17px; border-top: 1px solid rgba(0, 234, 255, 0.2); margin-top: 50px;">
+    <footer style="text-align: center; padding: 40px 20px; color: rgba(255, 255, 255, 0.6); font-size: 18px; border-top: 1px solid rgba(0, 234, 255, 0.2); margin-top: 50px;">
         <p>&copy; 2026 VeeTech Repair And Service. All Rights Reserved.</p>
         <p style="margin-top: 10px;">Developed by: Jayvee Ariz</p>
     </footer>
