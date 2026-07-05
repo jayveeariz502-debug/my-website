@@ -150,7 +150,6 @@ body{
     gap: 15px !important;           
 }
 
-/* HARD LOCK PARA SA DESKTOP LOGO AT ASPECT RATIO */
 #maliit-na-logo {
     width: 60px !important; 
     max-width: 60px !important;
@@ -254,7 +253,7 @@ body{
 
 .large-hero-logo {
     display: block !important;
-    width: 450px !important;       
+    width: 450px !important;        
     max-width: 100% !important;
     height: auto !important;
     mix-blend-mode: screen; 
@@ -333,6 +332,106 @@ body{
     font-weight:bold;
 }
 
+/* FIX PARA SA LAPTOP GALLERY - MAY ILAW NA AT SAKTO ANG SIZE */
+.laptop-gallery .gallery-container {
+    max-width: 900px !important; 
+    margin: 0 auto !important;
+}
+
+.laptop-gallery .gallery-item {
+    height: auto !important;
+    background: rgba(255,255,255,0.08) !important;
+    border: 2px solid #00eaff !important;
+    border-radius: 20px !important;
+    animation: neonGlow 2s infinite alternate !important;
+    overflow: hidden;
+}
+
+.laptop-gallery .gallery-item img {
+    object-fit: contain !important;
+    height: auto !important;
+    width: 100% !important;
+    display: block;
+}
+
+
+/* CCTV Banner Glow Fix */
+#cctvinstaller .gallery-container {
+    width: 100% !important;
+    display: flex !important;
+    justify-content: center !important;
+}
+
+#cctvinstaller .gallery-item {
+    width: 90% !important;
+    max-width: 1000px !important;
+    
+    /* Ibinabalik natin ang style dito */
+    background: rgba(255, 255, 255, 0.05) !important;
+    border: 2px solid #00eaff !important;
+    border-radius: 20px !important;
+    animation: neonGlow 2s infinite alternate !important; /* DITO NANGGALING ANG GLOW */
+    overflow: hidden !important;
+}
+
+#cctvinstaller .gallery-item img {
+    width: 100% !important;
+    height: auto !important;
+    display: block !important;
+}
+
+
+/* SOLAR INSTALLER Glow Fix */
+#solarinstaller .gallery-container {
+    width: 100% !important;
+    display: flex !important;
+    justify-content: center !important;
+}
+
+#solarinstaller .gallery-item {
+    width: 90% !important;
+    max-width: 1000px !important;
+    
+    /* Ibinabalik natin ang style dito */
+    background: rgba(255, 255, 255, 0.05) !important;
+    border: 2px solid #00eaff !important;
+    border-radius: 20px !important;
+    animation: neonGlow 2s infinite alternate !important; /* DITO NANGGALING ANG GLOW */
+    overflow: hidden !important;
+}
+
+#solarinstaller .gallery-item img {
+    width: 100% !important;
+    height: auto !important;
+    display: block !important;
+}
+
+
+/* THAI Banner Glow Fix */
+#thaispeaker .gallery-container {
+    width: 100% !important;
+    display: flex !important;
+    justify-content: center !important;
+}
+
+#thaispeaker .gallery-item {
+    width: 90% !important;
+    max-width: 1000px !important;
+    
+    /* Ibinabalik natin ang style dito */
+    background: rgba(255, 255, 255, 0.05) !important;
+    border: 2px solid #00eaff !important;
+    border-radius: 20px !important;
+    animation: neonGlow 2s infinite alternate !important; /* DITO NANGGALING ANG GLOW */
+    overflow: hidden !important;
+}
+
+#thaispeaker .gallery-item img {
+    width: 100% !important;
+    height: auto !important;
+    display: block !important;
+}
+
 /* ================= MUSIC BUTTON ================= */
 .music-btn{
     position:fixed;
@@ -372,7 +471,6 @@ body{
         gap: 10px !important;
     }
 
-    /* HARD LOCK PARA SA MOBILE VIEW NG LOGO */
     #maliit-na-logo {
         width: 40px !important; 
         max-width: 40px !important;
@@ -438,7 +536,6 @@ body{
 
 <body>
 
-<!-- ================= TECH BACKGROUND ================= -->
 <div class="tech-background">
     <div class="tech-grid"></div>
     <div class="tech-lines">
@@ -469,7 +566,6 @@ body{
 
 <div class="main">
 
-    <!-- NAVBAR AREA -->
     <div class="navbar">
         <div class="logo-container">
             <img src="image_82e34b.png" id="maliit-na-logo" alt="VT Logo">
@@ -483,7 +579,7 @@ body{
                 <li><a href="#iphonebypass">IPHONE BYPASS</a></li>
                 <li><a href="#">GOOGLE FRP</a></li>
                 <li><a href="#">LAPTOP REPAIR AND PC</a></li>
-                <li><a href="#">CCTV INSTALLER</a></li>
+                <li><a href="#cctvinstaller">CCTV INSTALLER</a></li>
                 <li><a href="#">SOLAR INSTALLER</a></li>
                 <li><a href="#">THAI SPEAKER SALE</a></li>
             </ul>
@@ -495,7 +591,6 @@ body{
         </div>
     </div>
 
-    <!-- MAIN HERO CONTENT -->
     <div class="content">
         <div class="text-content">
             <h1>VeeTech Cellphone <br>And Laptop <br>Repair Service</h1>
@@ -526,7 +621,6 @@ body{
         </div>
     </div>
 
-    <!-- GALLERY SECTION -->
     <section id="iphonebypass" class="gallery">
         <h2>iPhone Repair and Bypass Services</h2>
         <div class="gallery-container">
@@ -549,9 +643,61 @@ body{
         </div>
     </section>
 
+    <!-- LAPTOP AND PC REPAIR SECTION -->
+    <section class="gallery laptop-gallery">
+        <h2>Laptop and PC Repair Services</h2>
+        <div class="gallery-container">
+            <div class="gallery-item">
+                <img src="Laptop.png" alt="Laptop Repair">
+                <p>Laptop Repair</p>
+            </div>
+            <div class="gallery-item">
+                <img src="PcBuild.png" alt="PC Build">
+                <p>PC Build</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEW SECTION: CCTV INSTALLER GALLERY -->
+    <section id="cctvinstaller" class="gallery">
+        <h2>CCTV Installation Services</h2>
+        <div class="gallery-container">
+            <div class="gallery-item">
+                <img src="CCTV.png" alt="CCTV Camera Setup">
+                <p>CCTV Camera Setup</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEW SECTION: SOLAR INSTALLER GALLERY -->
+    <section id="solarinstaller" class="gallery">
+        <h2>SOLAR INSTALLER AND REPAIR</h2>
+        <div class="gallery-container">
+            <div class="gallery-item">
+                <img src="Solar.png" alt="CCTV Camera Setup">
+                <p>SOLAR INSTALLER AND REPAIR</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEW SECTION: THAI SPEAKER GALLERY -->
+    <section id="thaispeaker" class="gallery">
+        <h2>THAI SPEAKER SALES AND MAKER</h2>
+        <div class="gallery-container">
+            <div class="gallery-item">
+                <img src="Thai.png" alt="CCTV Camera Setup">
+                <p>THAI SPEAKER SALES AND MAKER</p>
+            </div>
+        </div>
+    </section>
+
+    <footer style="text-align: center; padding: 40px 20px; color: rgba(255, 255, 255, 0.6); font-size: 18px; border-top: 1px solid rgba(0, 234, 255, 0.2); margin-top: 50px;">
+        <p>&copy; 2026 VeeTech Repair And Service. All Rights Reserved.</p>
+        <p style="margin-top: 10px;">Developed by: Jayvee Ariz</p>
+    </footer>
+
 </div>
 
-<!-- MUSIC COMPONENT -->
 <button class="music-btn" onclick="toggleMusic()">
 🎵 Play Music
 </button>
